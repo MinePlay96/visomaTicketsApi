@@ -1,10 +1,8 @@
-add object2ticket
-add contact
-add contract
-add contracttype
-add addinoutlooksettings ?
-add ticketsmobilesettings ?
-add project
-add timertype
-add tickettemplate
-add streamitem
+TODO: add object2ticket // complex
+TODO: add customer
+TODO: add contracttype
+TODO: add addinoutlooksettings ?
+TODO: add ticketsmobilesettings ?
+TODO: add tickettemplate ?
+
+TODO: check if ticketsmobilesettings can get { "groupname": "USER", "name": "ID", "title": "User's ID", "value": "5", "timestamp": null },

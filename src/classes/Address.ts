@@ -1,0 +1,20 @@
+export interface IAddressResponse {
+  "id": "1",
+  "sync_id": null,
+  "sync_source": null,
+  "customerid": "1",
+  "default_employeeid": null,
+  "active": "1",
+  "address": "Musterstraße 10",
+  "city": "Musterhausen",
+  "zipcode": "29525",
+  "countryid": "1",
+  "fon1": "21561451351",
+  "fon2": "",
+  "fon3": null,
+  "fon4": "",
+  "email": "office@visoma.de",
+  "comment": "",
+  "lockid": null,
+  "modified": "2020-06-16 23:41:49"
+}
