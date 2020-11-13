@@ -63,7 +63,6 @@ export class User {
   public active: boolean; // boolean 0 / 1
   public activeLogin: boolean; // boolean 0 / 1
   public username: string;
-  // TODO: chang to enum
   public usertype: EUserTypes;
   public authKey: string;
   public number?: number;

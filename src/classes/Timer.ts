@@ -7,27 +7,6 @@ export enum ETimerStatus {
   billed,
 }
 
-// {
-//   "Id": "1636",
-//   "TicketId": "0",
-//   "ArticleId": "0",
-//   "Article": "-",
-//   "TypeId": null,
-//   "UserId": "82",
-//   "User": "Leon Strauß",
-//   "Start": "2020-11-09 22:14:27",
-//   "Stop": "2020-11-09 22:14:27",
-//   "Description": "Via tickets gestartet und noch nicht beendet.",
-//   "InternalNotice": null,
-//   "Scheduled": false,
-//   "Billable": true,
-//   "Closed": false,
-//   "Approach": false,
-//   "Modified": "2020-11-09 22:14:27",
-//   "Status": 1,
-//   "erpid": false
-// }
-
 export interface ITimerResponse {
   // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
   Id: string;
@@ -83,7 +62,7 @@ export class Timer {
   public closed: boolean;
   public approach: boolean;
   public modified: Date;
-  public status: ETimerStatus; // TODO: change to enum
+  public status: ETimerStatus;
   public erpId?: string;
 
   public constructor(timerObject: ITimerResponse) {
