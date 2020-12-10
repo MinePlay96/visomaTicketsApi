@@ -106,7 +106,7 @@ export class User {
     this.defaultCustomerId = Number(userObject.default_customerid);
     this.calendarItemAccess = Boolean(Number(userObject.calendaritemaccess));
     this.modified = new Date(userObject.modified);
-    
+
     if (userObject.sync_id) {
       this.syncId = userObject.sync_id;
     }
