@@ -14,14 +14,10 @@ export interface IProjectResponse {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   Deadline: string; // wrong format day.month.year
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  ProjectmanagerIds: [
-    string
-  ];
+  ProjectmanagerIds: Array<string>;
   erpid: string | false;
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  TicketIds: [
-    string
-  ];
+  TicketIds: Array<string>;
 }
 
 export class Project {

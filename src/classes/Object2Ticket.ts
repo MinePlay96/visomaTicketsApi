@@ -4,12 +4,12 @@ export enum EObject2TicketTypes {
 }
 
 export interface IObject2TicketResponse {
-  'id': string;
-  'ticketid': string;
-  'objectid': string;
-  'type': EObject2TicketTypes;
-  'modified': string;
-  'params': string | null;
+  id: string;
+  ticketid: string;
+  objectid: string;
+  type: EObject2TicketTypes;
+  modified: string;
+  params: string | null;
 }
 
 export class Object2Ticket {
