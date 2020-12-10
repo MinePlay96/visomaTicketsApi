@@ -32,8 +32,6 @@ export class TicketPriority {
   public reactionTime: number;
   public erpId?: string;
 
-
-  // TODO: add add constructor for not API response
   public constructor(ticketPriorityObject: ITicketPriorityResponse) {
     this.id = Number(ticketPriorityObject.Id);
     this.active = ticketPriorityObject.Active;

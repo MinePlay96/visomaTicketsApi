@@ -33,7 +33,6 @@ export class Article {
   public tradegroups: Array<Categories>;
   public erpId?: string;
 
-  // TODO: add add constructor for not API response
   public constructor(articleObject: IApiArticleResponse) {
     this.id = Number(articleObject.id);
     this.title = articleObject.title;

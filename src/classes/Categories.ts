@@ -30,7 +30,6 @@ export class Categories {
   public active: boolean;
   public erpId?: string;
 
-  // TODO: add add constructor for not API response
   public constructor(tradeGroupObject: IApiCategoriesResponse) {
     this.id = Number(tradeGroupObject.id);
     this.parentid = Number(tradeGroupObject.parentid);

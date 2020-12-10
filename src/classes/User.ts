@@ -90,7 +90,6 @@ export class User {
   public defaultApproachApproachArticleId?: number;
   public erpId?: string;
 
-  // TODO: add add constructor for not API response
   public constructor(userObject: IApiUserResponse) {
     this.id = Number(userObject.id);
     this.active = Boolean(Number(userObject.active));

@@ -29,10 +29,10 @@ export class Address {
   public customerId: number;
   public defaultEmployeeId?: number;
   public active: boolean;
-  public address: string; // TODO: rename to street
+  public address: string;
   public city: string;
   public zipcode: string;
-  public countryId: number; // TODO: change to country object
+  public countryId: number;
   public fon1?: string;
   public fon2?: string;
   public fon3?: string;

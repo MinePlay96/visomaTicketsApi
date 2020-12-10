@@ -119,9 +119,7 @@ export class Ticket {
   public assetId?: number;
   public erpId?: string;
 
-  // TODO: add add constructor for not API response
   public constructor(ticketObject: IApiTicketResponse) {
-    // set class data
     this.id = Number(ticketObject.Id);
     this.number = Number(ticketObject.Number);
     this.title = ticketObject.Title;

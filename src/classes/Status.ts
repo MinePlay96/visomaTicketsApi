@@ -17,7 +17,6 @@ export class Status {
   public color: string;
   public erpId?: string;
 
-  // TODO: add add constructor for not API response
   public constructor(statusObject: IApiStatusResponse) {
     this.id = Number(statusObject.Id);
     this.title = statusObject.Title;

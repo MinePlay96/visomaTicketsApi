@@ -5,7 +5,6 @@ export enum ETimerTypeType {
   extraArticle
 }
 
-// TODO: check if is just object2<whatever>
 export interface ITimerTypeArticle {
   id: number;
   articleId: number;
@@ -40,7 +39,7 @@ export class TimerType {
   public typename?: string;
   public color?: string;
   public description?: string;
-  public type?: ETimerTypeType; // TODO: mayby enum with none ? at 0
+  public type?: ETimerTypeType;
   public active: boolean;
   public erpId?: string;
   public article?: ITimerTypeArticle;
