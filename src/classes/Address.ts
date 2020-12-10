@@ -1,20 +1,87 @@
 export interface IAddressResponse {
-  "id": "1",
-  "sync_id": null,
-  "sync_source": null,
-  "customerid": "1",
-  "default_employeeid": null,
-  "active": "1",
-  "address": "Musterstraße 10",
-  "city": "Musterhausen",
-  "zipcode": "29525",
-  "countryid": "1",
-  "fon1": "21561451351",
-  "fon2": "",
-  "fon3": null,
-  "fon4": "",
-  "email": "office@visoma.de",
-  "comment": "",
-  "lockid": null,
-  "modified": "2020-06-16 23:41:49"
+  id: string;
+  // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
+  sync_id: string | null;
+  // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
+  sync_source: string | null;
+  customerid: string;
+  // eslint-disable-next-line camelcase, @typescript-eslint/naming-convention
+  default_employeeid: string | null;
+  active: string;
+  address: string;
+  city: string;
+  zipcode: string;
+  countryid: string;
+  fon1: string;
+  fon2: string | null;
+  fon3: string | null;
+  fon4: string | null;
+  email: string;
+  comment: string;
+  lockid: string | null;
+  modified: string;
+}
+
+export class Address {
+  public id: number;
+  public syncId?: string;
+  public syncSource?: string;
+  public customerId: number;
+  public defaultEmployeeId?: number;
+  public active: boolean;
+  public address: string; // TODO: rename to street
+  public city: string;
+  public zipcode: string;
+  public countryId: number; // TODO: change to country object
+  public fon1?: string;
+  public fon2?: string;
+  public fon3?: string;
+  public fon4?: string;
+  public email: string;
+  public comment?: string;
+  public lockId?: number;
+  public modified: Date;
+
+  public constructor(addressObject: IAddressResponse) {
+    this.id = Number(addressObject.id);
+    this.customerId = Number(addressObject.customerid);
+    this.active = Boolean(Number(addressObject.active));
+    this.address = addressObject.address;
+    this.city = addressObject.city;
+    this.zipcode = addressObject.zipcode;
+    this.countryId = Number(addressObject.countryid);
+    this.modified = new Date(addressObject.modified);
+    this.fon1 = addressObject.fon1;
+
+    if (addressObject.sync_id) {
+      this.syncId = addressObject.sync_id;
+    }
+
+    if (addressObject.sync_source) {
+      this.syncSource = addressObject.sync_source;
+    }
+
+    if (addressObject.default_employeeid) {
+      this.defaultEmployeeId = Number(addressObject.default_employeeid);
+    }
+
+    if (addressObject.fon2) {
+      this.fon2 = addressObject.fon2;
+    }
+
+    if (addressObject.fon3) {
+      this.fon3 = addressObject.fon3;
+    }
+
+    if (addressObject.fon4) {
+      this.fon4 = addressObject.fon4;
+    }
+
+    this.email = addressObject.email;
+
+    if (addressObject.lockid) {
+      this.lockId = Number(addressObject.lockid);
+    }
+
+  }
 }

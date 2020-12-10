@@ -57,7 +57,7 @@ export interface IApiUserResponse {
 
 export class User {
   public id: number;
-  public syncId?: number;
+  public syncId?: string;
   public syncSource?: string;
   public addressId?: number;
   public active: boolean; // boolean 0 / 1
@@ -93,9 +93,22 @@ export class User {
   // TODO: add add constructor for not API response
   public constructor(userObject: IApiUserResponse) {
     this.id = Number(userObject.id);
-
+    this.active = Boolean(Number(userObject.active));
+    this.activeLogin = Boolean(Number(userObject.active_login));
+    this.username = userObject.username;
+    this.usertype = userObject.usertype;
+    this.authKey = userObject.auth_key;
+    this.email = userObject.email;
+    this.title = userObject.title;
+    this.firstname = userObject.firstname;
+    this.lastname = userObject.lastname;
+    this.defaultTimerArticleId = Number(userObject.default_timer_articleid);
+    this.defaultCustomerId = Number(userObject.default_customerid);
+    this.calendarItemAccess = Boolean(Number(userObject.calendaritemaccess));
+    this.modified = new Date(userObject.modified);
+    
     if (userObject.sync_id) {
-      this.syncId = Number(userObject.sync_id);
+      this.syncId = userObject.sync_id;
     }
 
     if (userObject.sync_source) {
@@ -105,19 +118,10 @@ export class User {
     if (userObject.addressid) {
       this.addressId = Number(userObject.addressid);
     }
-    this.active = Boolean(Number(userObject.active));
-    this.activeLogin = Boolean(Number(userObject.active_login));
-    this.username = userObject.username;
-    this.usertype = userObject.usertype;
-    this.authKey = userObject.auth_key;
 
     if (userObject.number) {
       this.number = Number(userObject.number);
     }
-    this.email = userObject.email;
-    this.title = userObject.title;
-    this.firstname = userObject.firstname;
-    this.lastname = userObject.lastname;
 
     if (userObject.department) {
       this.department = userObject.department;
@@ -138,12 +142,10 @@ export class User {
     if (userObject.fon1) {
       this.fon4 = userObject.fon4;
     }
-    this.defaultTimerArticleId = Number(userObject.default_timer_articleid);
 
     if (userObject.default_timer_typeid) {
       this.defaultTimerTypeId = Number(userObject.default_timer_typeid);
     }
-    this.defaultCustomerId = Number(userObject.default_customerid);
 
     if (userObject.default_approach_articleid) {
       this.defaultTimerArticleId = Number(userObject.default_approach_articleid);
@@ -160,7 +162,6 @@ export class User {
     if (userObject.lockid) {
       this.lockId = Number(userObject.lockid);
     }
-    this.calendarItemAccess = Boolean(Number(userObject.calendaritemaccess));
 
     if (!isNaN(Date.parse(userObject.lastpasschange))) {
       this.lastPassChange = new Date(userObject.lastpasschange);
@@ -169,7 +170,6 @@ export class User {
     if (!isNaN(Date.parse(userObject.lastlogin))) {
       this.lastLogin = new Date(userObject.lastlogin);
     }
-    this.modified = new Date(userObject.modified);
 
     if (userObject.lettertitle) {
       this.letterTitle = userObject.lettertitle;
