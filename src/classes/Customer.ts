@@ -170,7 +170,7 @@ export class Customer {
     this.defaultBillable = customerObject.DefaultBillable;
     this.addresses = (customerObject.Addresses ?? []).map(ele => Number(ele.Id));
     this.contacts = (customerObject.Contacts ?? []).map(ele => Number(ele.Id));
-    this.currentTickets = (customerObject.CurrentTickets ?? []).map(ele => Number(ele.Id));
+    this.currentTickets = (customerObject.CurrentTickets ?? []).map(ele => Number(ele.id));
     this.contracts = (customerObject.Contracts ?? []).map(ele => Number(ele.Id));
     this.assets = (customerObject.Assets ?? []).map(ele => Number(ele.Id));
 
