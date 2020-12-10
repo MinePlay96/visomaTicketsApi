@@ -77,7 +77,9 @@ interface IAssetCustomerResponse {
   additionalparams: string;
   lockid: string| null;
   modified: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   Id: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   Title: string;
 }
 
